@@ -1,0 +1,42 @@
+<div data-role="view"
+     id="add-reminder-view"
+     data-layout="main-layout"
+     data-title="Add Reminder"
+     data-show="app.addReminder.init">
+
+    <div class="row">
+        <label>Category</label>
+        <select style="width:1px;" id="categories-list" data-role="dropdownlist"
+                class="contacts-list"
+                data-bind="source: categories, events: {change: change}"
+                data-text-field="Name"
+                data-value-field="Id">
+        </select>
+    </div>
+    <div class="row">
+        <label>
+            Reminder Name
+            <input class="float-right" type="text" data-bind="value: name"/>
+        </label>
+    </div>
+    <div class="row" id="accociated-contacts">
+
+        <div id="add-contact">
+            <input type="button"
+                   data-role="button"
+                   data-bind="click: addContact"
+                   value="Add Contact" />
+            
+            <select class="contacts-list" id="reminders-contacts-list"></select>
+        </div>
+    </div>
+    <div class="row">
+        Reminder Description <textarea class="textarea" data-bind="value: description"></textarea>
+    </div>
+    <div class="row">        
+        <button data-role="button" data-bind="click: addImage">Add Picture to Reminder</button>
+    </div>
+    <div class="row">
+    <button data-role="button" data-bind="click: addReminder">Add Reminder</button>
+    </div>
+</div>

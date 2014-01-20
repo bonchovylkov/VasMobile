@@ -1,0 +1,50 @@
+<div data-role="view"
+     id="add-event-view"
+     data-layout="main-layout"
+     data-title="Add Event"
+     data-show="app.addEvent.init">
+    <div class="row">
+        <label>Category</label>
+        <select style="width:1px;" id="categories-list" data-role="dropdownlist"
+                class="contacts-list"
+                data-bind="source: categories, events: {change: change}"
+                data-text-field="Name"
+                data-value-field="Id">
+        </select>
+    </div>
+    <div class="row">
+        <label>
+            Event Name
+            <input type="text" class="float-right" data-bind="value: name"/>
+        </label>
+    </div>
+    <div class="row" id="accociated-contacts">
+
+        <div id="add-contact">
+            <input type="button"
+                   data-role="button"
+                   data-bind="click: addContact"
+                   value="Add Contact" />
+
+            <select class="contacts-list" id="events-contacts-list"></select>
+        </div>
+    </div>
+    <div class="row">
+        Set current position as event location
+        <input type="checkbox" id="toLocate" data-role="switch"/>
+    </div>
+    <div class="row">
+        Event Date
+        <input type="datetime" class="float-right" data-bind="value: startDate" />
+    </div>
+    <div class="row">
+        Event Duration
+        <input class="float-right" type="time" data-bind="value: duration" />
+    </div>
+    <div class="row">
+        Event Description <textarea class="textarea" data-bind="value: description"></textarea>
+    </div>
+    <div class="row">
+        <button data-role="button" data-bind="click: addEvent">Add Event</button>
+    </div>
+</div>
